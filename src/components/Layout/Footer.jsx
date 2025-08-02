@@ -5,7 +5,7 @@ export const Footer = () => (
     </a>
     <img
       class="block"
-      src={`https://hits.sh/hits.sh/${location.hostname}/rafacandev/recipe-cards/hits.svg?style=for-the-badge&label=views&labelColor=005018`}
+      src={`https://hits.sh/hits.sh/${location.hostname}/rafacandev/recipe-cards/hits.svg?style=for-the-badge&label=views&color=ffffff&labelColor=000000`}
     />
   </>
 )

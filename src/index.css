@@ -4,8 +4,8 @@
 
 @plugin "daisyui" {
   themes:
-    emerald --default,
-    emerald --prefersdark;
+    fantasy --default,
+    fantasy --prefersdark;
 }
 
 @layer base {
