@@ -23,6 +23,7 @@ Follow the [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0)
 * **lint**: Update code formatting/style without changing behavior
 * **refactor**: Modify internal code without changing external behavior
 * **doc**: Update documentation
+* **chore**: General chores (i.e: update dependencies, change ignore files)
 
 ## Testing
 
