@@ -1,5 +1,6 @@
 import { Header } from "./Header"
 import { Footer } from "./Footer"
+import { RecipesPage } from "../RecipesPage/RecipesPage"
 
 export const Layout = () => (
   <div class="flex flex-col h-screen w-full">
@@ -11,7 +12,7 @@ export const Layout = () => (
 
     <div class="flex grow px-1 justify-center bg-base-200">
       <div class="w-full max-w-4xl h-full bg-base-100 sm:px-1 lg:px-3">
-        <div>Contente goes here</div>
+        <RecipesPage />
       </div>
     </div>
 
