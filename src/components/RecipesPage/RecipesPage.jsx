@@ -1,8 +1,13 @@
 import { For } from "solid-js"
 import recipes from "./recipes.json"
 
-const Card = ({ name = "", ingredients = [], directions = [] }) => (
+const imageSrc = (image = "") => "./recipes/" + image
+
+const Card = ({ name = "", image = "", ingredients = [], directions = [] }) => (
   <div class="card card-border w-96 bg-base-100 card-md shadow-sm">
+    <figure>
+      <img src={imageSrc(image)} alt={name} />
+    </figure>
     <div class="card-body">
       <h2 class="card-title">{name}</h2>
       <p>Ingredients:</p>
