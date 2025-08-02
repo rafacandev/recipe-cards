@@ -1,0 +1,19 @@
+@import "tailwindcss";
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@plugin "daisyui" {
+  themes:
+    emerald --default,
+    emerald --prefersdark;
+}
+
+@layer base {
+  a {
+    @apply text-green-800 cursor-pointer font-medium;
+  }
+
+  a:hover {
+    @apply text-green-600 underline;
+  }
+}
