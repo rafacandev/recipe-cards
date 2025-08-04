@@ -4,9 +4,9 @@ import recipes from "./recipes.json"
 const imageSrc = (image = "") => "./recipes/" + image
 
 const Card = ({ name = "", image = "", ingredients = [], directions = [] }) => (
-  <div class="card card-border max-w-96 bg-base-100 card-md shadow-sm">
+  <div class="card card-border max-w-[440px] bg-base-100 card-md shadow-sm">
     <figure>
-      <img class="h-52 w-full object-cover" src={imageSrc(image)} alt={name} />
+      <img class="h-48 w-full object-cover" src={imageSrc(image)} alt={name} />
     </figure>
     <div class="card-body">
       <h2 class="card-title">{name}</h2>
@@ -29,7 +29,7 @@ export const RecipesPage = () => {
   return (
     <>
       <h1>Recipes</h1>
-      <div class="flex gap-4">
+      <div class="flex gap-4 flex-col md:flex-row">
         <For each={recipes}>{recipe => <Card {...recipe}></Card>}</For>
       </div>
     </>
