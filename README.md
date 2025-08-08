@@ -4,6 +4,13 @@ A simple website for recipes in card format: easy to cook, print, and share.
 
 # Development
 
+## Tech Stack
+This project uses:
+- [vite](https://vitejs.dev/)
+- [solidjs](https://www.solidjs.com/)
+- [tailwind](https://tailwindcss.com/)
+- [DaisyUI](https://daisyui.com/)
+
 ## Commit Guidelines
 
 Follow the [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0) specification for all commit messages. This helps maintain a clean and readable project history.
