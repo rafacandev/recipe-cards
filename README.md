@@ -5,7 +5,9 @@ A simple website for recipes in card format: easy to cook, print, and share.
 # Development
 
 ## Tech Stack
+
 This project uses:
+
 - [vite](https://vitejs.dev/)
 - [solidjs](https://www.solidjs.com/)
 - [tailwind](https://tailwindcss.com/)
