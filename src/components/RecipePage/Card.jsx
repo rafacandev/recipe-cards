@@ -1,6 +1,7 @@
-import { For, Show, createSignal } from "solid-js"
+import { For } from "solid-js"
+const baseUrl = import.meta.env.BASE_URL
 
-const imageSrc = (image = "") => "./recipes/" + image
+const imageSrc = (image = "") => `${baseUrl}recipes/${image}`
 
 const Body = ({ ingredients = [""], directions = [""] }) => (
   <>
@@ -16,10 +17,6 @@ const Body = ({ ingredients = [""], directions = [""] }) => (
 )
 
 export const Card = ({ name = "", image = "", ingredients = [], directions = [] }) => {
-  const [expanded, setExpanded] = createSignal(true)
-
-  const handleOnClick = () => setExpanded(e => !e)
-
   return (
     <div class="card card-border bg-white card-md shadow-sm">
       <figure>
@@ -27,13 +24,9 @@ export const Card = ({ name = "", image = "", ingredients = [], directions = [] 
       </figure>
       <div class="card-body">
         <h2 class="card-title">{name}</h2>
-        <Show when={expanded()}>
-          <Body ingredients={ingredients} directions={directions} />
-        </Show>
+        <Body ingredients={ingredients} directions={directions} />
         <div class="justify-end card-actions">
-          <button class="btn btn-primary" onclick={handleOnClick}>
-            Select
-          </button>
+          <button class="btn btn-primary">Select</button>
         </div>
       </div>
     </div>
