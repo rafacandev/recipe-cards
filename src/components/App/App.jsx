@@ -1,2 +1,4 @@
 import { Layout } from "../Layout/Layout"
-export const App = () => <Layout />
+import { RecipesPage } from "../RecipesPage/RecipesPage"
+
+export const App = () => <Layout></Layout>

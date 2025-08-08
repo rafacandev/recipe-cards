@@ -1,6 +1,6 @@
 import { render } from "solid-js/web"
 import "./index.css"
-import { AppRoutes } from "./routing";
+import { AppRoutes } from "./routing"
 const root = document.getElementById("root")
 
 if (import.meta.env.DEV && !(root instanceof HTMLElement)) {
