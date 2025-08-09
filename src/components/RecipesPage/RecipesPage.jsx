@@ -1,5 +1,5 @@
 import { For } from "solid-js"
-import recipes from "./recipes.json"
+import { recipes } from "./recipes"
 import { Card } from "./Card"
 
 export const RecipesPage = () => {

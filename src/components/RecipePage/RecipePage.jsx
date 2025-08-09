@@ -1,5 +1,5 @@
 import { useParams } from "@solidjs/router"
-import recipes from "../RecipesPage/recipes.json"
+import { recipes } from "../RecipesPage/recipes"
 import { Card } from "./Card"
 
 /**
