@@ -1,8 +1,9 @@
 import { CardImage } from "./CardImage"
 import { useNavigate } from "@solidjs/router"
 
-export const MiniCard = ({ recipeId = "", name = "", image = "" }) => {
+export const Card = ({ recipeId = "", name = "", image = "" }) => {
   const navigate = useNavigate()
+
   const handleOnClick = () => {
     navigate(`/recipe/${recipeId}`)
   }
@@ -14,7 +15,7 @@ export const MiniCard = ({ recipeId = "", name = "", image = "" }) => {
         <h2 class="card-title">{name}</h2>
         <div class="justify-end card-actions">
           <button class="btn btn-primary" onClick={handleOnClick}>
-            Select
+            View
           </button>
         </div>
       </div>
