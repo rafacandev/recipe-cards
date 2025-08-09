@@ -56,27 +56,6 @@ export const recipes = [
     ],
   },
   {
-    recipeId: "chilli",
-    image: "chilli.jpg",
-    name: "Chilli Second",
-    ingredients: [
-      "1 second pound ground beef",
-      "1 second onion, chopped",
-      "1 second (15 ounce) can tomato sauce",
-      "1 second (15 ounce) can kidney beans",
-      "1 second (14.5 ounce) can stewed tomatoes",
-      "1 second ½ cups water, or as needed (Optional)",
-      "1 second teaspoon chili powder, or more to taste",
-      "1 second pinch garlic powder",
-      "salt and pepper to taste",
-    ],
-    directions: [
-      "Place ground beef and onion in a large saucepan over medium heat; cook and stir until meat is browned and onion is tender, about 5 to 7 minutes.",
-      "Stir in tomato sauce, kidney beans, and stewed tomatoes with juice. If you prefer a thinner consistency, you can add water. Season with chili powder, garlic powder, salt, and black pepper. Bring to a boil, reduce heat to low, cover and let simmer for 15 minutes.",
-    ],
-  },
-
-  {
     recipeId: "microwave-rice",
     image: "microwave-rice.jpg",
     name: "Microwave Rice",
