@@ -75,4 +75,16 @@ export const recipes = [
       "Stir in tomato sauce, kidney beans, and stewed tomatoes with juice. If you prefer a thinner consistency, you can add water. Season with chili powder, garlic powder, salt, and black pepper. Bring to a boil, reduce heat to low, cover and let simmer for 15 minutes.",
     ],
   },
+
+  {
+    recipeId: "microwave-rice",
+    image: "microwave-rice.jpg",
+    name: "Microwave Rice",
+    ingredients: ["1 cup of white rice", "2 cups of water"],
+    directions: [
+      "Place rice and water in a microwave safe container.",
+      "Set the microwave to half power and 24 minutes.",
+      "You might want to experiment with different power settings and times for the consistency you like.",
+    ],
+  },
 ]
