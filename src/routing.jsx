@@ -3,7 +3,7 @@ import { RecipesPage } from "./components/RecipesPage/RecipesPage"
 import { Layout } from "./components/Layout/Layout"
 import { NotFound } from "./components/NotFound/NotFound"
 import { RecipePage } from "./components/RecipePage/RecipePage"
-const baseUrl = import.meta.env.BASE_URL
+import { baseUrl } from "./core/public"
 
 export const AppRoutes = () => (
   <Router base={baseUrl} root={Layout}>

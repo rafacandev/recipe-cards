@@ -1,7 +1,5 @@
 import { For } from "solid-js"
-const baseUrl = import.meta.env.BASE_URL
-
-const imageSrc = (image = "") => `${baseUrl}recipes/${image}`
+import { publicResource } from "../../core/public"
 
 const Body = ({ ingredients = [""], directions = [""] }) => (
   <>
@@ -20,7 +18,7 @@ export const Card = ({ name = "", image = "", ingredients = [], directions = [] 
   return (
     <div class="card card-border bg-white card-md shadow-sm">
       <figure>
-        <img class="h-48 w-full object-cover" src={imageSrc(image)} alt={name} />
+        <img class="h-48 w-full object-cover" src={publicResource(image)} alt={name} />
       </figure>
       <div class="card-body">
         <h2 class="card-title">{name}</h2>
