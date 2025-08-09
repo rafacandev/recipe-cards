@@ -1,3 +1,16 @@
+/**
+ * @typedef {{
+ *  recipeId: string,
+ *  image: string,
+ *  name: string,
+ *  ingredients: string[],
+ *  directions: string[]
+ * }} Recipe
+ */
+
+/**
+ * @type {Recipe[]}
+ */
 export const recipes = [
   {
     recipeId: "chilli",
