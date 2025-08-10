@@ -2,6 +2,8 @@
 
 A simple website for recipes in card format: easy to cook, print, and share.
 
+This website is deployed with GitHub Pages at: https://rafacandev.github.io/recipe-cards/
+
 # Development
 
 ## Tech Stack
