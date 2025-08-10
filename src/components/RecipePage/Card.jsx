@@ -1,6 +1,8 @@
 import { For } from "solid-js"
 import { publicResource } from "../../core/public"
 
+const imageSrc = (image = "") => publicResource(`recipes/${image}`)
+
 const Body = ({ ingredients = [""], directions = [""] }) => (
   <>
     <h3 class="text-slate-700 font-medium">Ingredients</h3>
@@ -18,7 +20,7 @@ export const Card = ({ name = "", image = "", ingredients = [], directions = [] 
   return (
     <div class="card card-border bg-white card-md shadow-sm">
       <figure>
-        <img class="h-48 w-full object-cover" src={publicResource(image)} alt={name} />
+        <img class="h-48 w-full object-cover" src={imageSrc(image)} alt={name} />
       </figure>
       <div class="card-body">
         <h2 class="card-title">{name}</h2>

@@ -1,3 +1,4 @@
+import { baseUrl } from "../../core/public"
 import { CardImage } from "./CardImage"
 import { useNavigate } from "@solidjs/router"
 
@@ -6,6 +7,7 @@ export const Card = ({ recipeId = "", name = "", image = "" }) => {
 
   const handleOnClick = () => {
     navigate(`/recipe/${recipeId}`)
+    console.log("navigating to", baseUrl, recipeId)
   }
 
   return (

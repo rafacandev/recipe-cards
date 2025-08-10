@@ -1,4 +1,6 @@
-const imageSrc = (image = "") => "./recipes/" + image
+import { publicResource } from "../../core/public"
+
+const imageSrc = (image = "") => publicResource(`recipes/${image}`)
 
 export const CardImage = ({ image = "", name = "" }) => (
   <figure>

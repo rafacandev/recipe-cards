@@ -4,7 +4,7 @@ import tailwindcss from "@tailwindcss/vite"
 
 export default defineConfig({
   plugins: [solidPlugin(), tailwindcss()],
-  base: "/recipe-cards/",
+  base: "/recipe-cards",
   server: {
     port: 3000,
   },

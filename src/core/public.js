@@ -9,4 +9,4 @@ export const baseUrl = import.meta.env.BASE_URL
  * @param {string} res The resource name (e.g. "chilli.jpg")
  * @returns {string} The full url to the resource.
  */
-export const publicResource = (res = "") => `${baseUrl}recipes/${res}`
+export const publicResource = (res = "") => `${baseUrl}/${res}`
