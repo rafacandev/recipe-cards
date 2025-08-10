@@ -1,6 +1,7 @@
 import { render } from "solid-js/web"
 import "./index.css"
-import { AppRoutes } from "./routing"
+import { App } from "./components/App/App"
+
 const root = document.getElementById("root")
 
 if (import.meta.env.DEV && !(root instanceof HTMLElement)) {
@@ -9,4 +10,4 @@ if (import.meta.env.DEV && !(root instanceof HTMLElement)) {
   )
 }
 
-render(() => <AppRoutes />, root)
+render(() => <App />, root)
