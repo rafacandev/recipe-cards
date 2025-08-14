@@ -9,7 +9,7 @@ export const RecipePage = () => {
 
   return (
     <div class="my-4">
-      <Card {...recipe}></Card>
+      <Card {...recipe} />
     </div>
   )
 }
