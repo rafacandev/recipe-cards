@@ -16,21 +16,19 @@ const Body = ({ ingredients = [""], directions = [""] }) => (
   </>
 )
 
-export const Card = ({ name = "", image = "", ingredients = [], directions = [] }) => {
-  return (
-    <div class="card card-border bg-white card-md shadow-sm">
-      <figure>
-        <img class="h-48 w-full object-cover" src={imageSrc(image)} alt={name} />
-      </figure>
-      <div class="card-body">
-        <h2 class="card-title">{name}</h2>
-        <Body ingredients={ingredients} directions={directions} />
-        <div class="justify-end card-actions">
-          <button class="btn btn-primary" onClick={() => window.print()}>
-            Print
-          </button>
-        </div>
+export const Card = ({ name = "", image = "", ingredients = [], directions = [] }) => (
+  <div class="card card-border bg-white card-md shadow-sm">
+    <figure>
+      <img class="h-48 w-full object-cover" src={imageSrc(image)} alt={name} />
+    </figure>
+    <div class="card-body">
+      <h2 class="card-title">{name}</h2>
+      <Body ingredients={ingredients} directions={directions} />
+      <div class="justify-end card-actions">
+        <button class="btn btn-primary" onClick={() => window.print()}>
+          Print
+        </button>
       </div>
     </div>
-  )
-}
+  </div>
+)
