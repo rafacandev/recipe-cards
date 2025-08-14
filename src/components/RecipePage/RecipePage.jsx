@@ -8,8 +8,7 @@ export const RecipePage = () => {
   const recipe = recipes.find(r => r.recipeId === params.recipeId) ?? null
 
   return (
-    <div>
-      <h1 class="text-4xl">Recipe Page</h1>
+    <div class="my-4">
       <Card {...recipe}></Card>
     </div>
   )
