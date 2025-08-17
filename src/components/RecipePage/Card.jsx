@@ -35,7 +35,6 @@ export const Card = ({
         <h2 class="card-title">{name}</h2>
         <Body ingredients={ingredients} directions={directions} />
         <div class="justify-end card-actions">
-          {isFullScreen ? "true" : "false"}
           <button class="btn btn-primary" onClick={() => window.print()}>
             Print
           </button>
