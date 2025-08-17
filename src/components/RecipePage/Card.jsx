@@ -17,14 +17,7 @@ const Body = ({ ingredients = [""], directions = [""] }) => (
   </>
 )
 
-export const Card = ({
-  recipeId = "",
-  name = "",
-  image = "",
-  ingredients = [],
-  directions = [],
-  isFullScreen = false,
-}) => {
+export const Card = ({ recipeId = "", name = "", image = "", ingredients = [], directions = [] }) => {
   const navigate = useNavigate()
   return (
     <div class="card card-border bg-white card-md shadow-sm">
@@ -36,7 +29,7 @@ export const Card = ({
         <Body ingredients={ingredients} directions={directions} />
         <div class="justify-end card-actions">
           <button class="btn btn-primary" onClick={() => navigate("/")}>
-            Back
+            Recipes
           </button>
           <button class="btn btn-primary" onClick={() => window.print()}>
             Print
