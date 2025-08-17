@@ -9,8 +9,8 @@ export const Card = ({ recipeId = "", name = "", image = "" }) => {
   }
 
   return (
-    <div class="card card-border bg-white card-md shadow-sm">
-      <CardImage image={image} name={name} onclick={handleOnClick} />
+    <div class="card card-border bg-white card-md shadow-sm hover:cursor-pointer" onclick={handleOnClick}>
+      <CardImage image={image} name={name} />
       <div class="card-body">
         <h2 class="card-title">{name}</h2>
         <div class="justify-end card-actions">
