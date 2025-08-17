@@ -1,4 +1,4 @@
-import { For } from "solid-js"
+import { For, Show } from "solid-js"
 import { publicResource } from "../../core/public"
 import { useNavigate } from "@solidjs/router"
 
@@ -17,7 +17,14 @@ const Body = ({ ingredients = [""], directions = [""] }) => (
   </>
 )
 
-export const Card = ({ recipeId = "", name = "", image = "", ingredients = [], directions = [] }) => {
+export const Card = ({
+  recipeId = "",
+  name = "",
+  image = "",
+  ingredients = [],
+  directions = [],
+  isFullScreen = false,
+}) => {
   const navigate = useNavigate()
   return (
     <div class="card card-border bg-white card-md shadow-sm">
@@ -34,9 +41,16 @@ export const Card = ({ recipeId = "", name = "", image = "", ingredients = [], d
           <button class="btn btn-primary" onClick={() => window.print()}>
             Print
           </button>
-          <button class="btn btn-primary" onClick={() => navigate(`/full/recipe/${recipeId}`)}>
-            Full Screen
-          </button>
+          <Show when={!isFullScreen}>
+            <button class="btn btn-primary" onClick={() => navigate(`/full/recipe/${recipeId}`)}>
+              Full Screen
+            </button>
+          </Show>
+          <Show when={isFullScreen}>
+            <button class="btn btn-primary" onClick={() => navigate(`/recipe/${recipeId}`)}>
+              Exit Full Screen
+            </button>
+          </Show>
         </div>
       </div>
     </div>

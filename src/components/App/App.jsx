@@ -13,7 +13,7 @@ export const App = () => (
       <Route path="*404" component={NotFound} />
     </Route>
     <Route path="/full" component={FullScreenLayout}>
-      <Route path="/recipe/:recipeId" component={RecipePage} />
+      <Route path="/recipe/:recipeId" component={() => <RecipePage isFullScreen={true} />} />
     </Route>
   </Router>
 )
