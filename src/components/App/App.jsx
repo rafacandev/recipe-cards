@@ -5,7 +5,7 @@ import { NotFound } from "../NotFound/NotFound"
 import { RecipePage } from "../RecipePage/RecipePage"
 import { baseUrl } from "../../core/public"
 
-export const App = () => () => (
+export const App = () => (
   <Router base={baseUrl}>
     <Route path="/" component={Layout}>
       <Route path="/" component={RecipesPage} />
