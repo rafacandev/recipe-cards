@@ -1,6 +1,7 @@
 import { Router, Route } from "@solidjs/router"
 import { RecipesPage } from "../RecipesPage/RecipesPage"
-import { DefaultLayout, FullScreenLayout } from "../Layout/DefaultLayout"
+import { DefaultLayout } from "../Layout/DefaultLayout"
+import { FullScreenLayout } from "../Layout/FullScreenLayout"
 import { NotFound } from "../NotFound/NotFound"
 import { RecipePage } from "../RecipePage/RecipePage"
 import { baseUrl } from "../../core/public"
