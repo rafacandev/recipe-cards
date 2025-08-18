@@ -38,7 +38,7 @@ export const Card = ({
           <button class="btn btn-primary" onClick={() => navigate("/")}>
             Recipes
           </button>
-          <button class="btn btn-primary" onClick={() => window.print()}>
+          <button class="btn btn-primary" onClick={() => navigate(`/print/recipe/${recipeId}`)}>
             Print
           </button>
           <Show when={!isFullScreen}>
