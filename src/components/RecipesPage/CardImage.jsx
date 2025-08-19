@@ -1,4 +1,4 @@
-import { publicResource } from "../../core/public"
+import { publicResource } from "../../context/public"
 
 const imageSrc = (image = "") => publicResource(`recipes/${image}`)
 

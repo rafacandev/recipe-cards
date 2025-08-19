@@ -1,5 +1,5 @@
 import { For, Show } from "solid-js"
-import { publicResource } from "../../core/public"
+import { publicResource } from "../../context/public"
 import { useNavigate } from "@solidjs/router"
 
 const imageSrc = (image = "") => publicResource(`recipes/${image}`)
