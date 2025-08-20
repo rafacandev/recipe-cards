@@ -7,12 +7,10 @@ export const PrintPage = () => {
   const params = useParams()
   const recipe = recipes.find(r => r.recipeId === params.recipeId) ?? null
 
-  onMount(() => {
-    window.print()
-  })
+  onMount(() => window.print())
 
   return (
-    <div class="my-4">
+    <div class="h-[25cm] w-[18cm]">
       <Card {...recipe} />
     </div>
   )
