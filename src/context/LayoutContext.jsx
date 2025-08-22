@@ -1,12 +1,8 @@
 import { createContext, createSignal, useContext } from "solid-js"
 
 /**
- * @typedef {() => "default" | "fullScreen" | "print"} LayoutState
- */
-
-/**
  * @typedef {Object} LayoutContextValue
- * @property {LayoutState} layout - Get the layout value.
+ * @property {() => "default" | "fullScreen" | "print"} layout - Get the layout value.
  * @property {() => void} setDefaultLayout - Sets the layout to default.
  * @property {() => void} setFullScreenLayout - Sets the layout to full screen.
  * @property {() => void} setPrintLayout - Sets the layout to print.

@@ -1,6 +1,8 @@
 import { For, Show } from "solid-js"
 import { publicResource } from "../../context/public"
 import { useNavigate } from "@solidjs/router"
+import { useLayout } from "../../context/LayoutContext"
+import { createMemo } from "solid-js"
 
 const imageSrc = (image = "") => publicResource(`recipes/${image}`)
 
@@ -26,8 +28,10 @@ export const Card = ({
   isFullScreen = false,
 }) => {
   const navigate = useNavigate()
+  const { layout } = useLayout()
+  const layoutCardClasses = createMemo(() => (layout() === "print" ? "border-2 border-gray-300" : "card"))
   return (
-    <div class="card card-border bg-white card-md shadow-sm">
+    <div class={`${layoutCardClasses()} card-md card-border bg-white shadow-sm`}>
       <figure>
         <img class="h-48 w-full object-cover" src={imageSrc(image)} alt={name} />
       </figure>
