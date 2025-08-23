@@ -9,8 +9,8 @@ export const PrintPage = () => {
   const recipe = recipes.find(r => r.recipeId === recipeId) ?? null
 
   onMount(() => {
+    window.addEventListener("afterprint", () => window.close())
     window.print()
-    navigate(`/recipe/${recipeId}`)
   })
 
   return (

@@ -1,5 +1,5 @@
 import { For, Show } from "solid-js"
-import { publicResource } from "../../context/public"
+import { publicResource, baseUrl } from "../../context/public"
 import { useNavigate } from "@solidjs/router"
 import { useLayout } from "../../context/LayoutContext"
 import { createMemo } from "solid-js"
@@ -30,6 +30,11 @@ export const Card = ({
   const navigate = useNavigate()
   const { layout } = useLayout()
   const layoutCardClasses = createMemo(() => (layout() === "print" ? "border-2 border-gray-300" : "card"))
+
+  const handlePrint = () => {
+    window.open(`${baseUrl}/print/recipe/${recipeId}`, "print-recipe")
+  }
+
   return (
     <div class={`${layoutCardClasses()} card-md card-border bg-white shadow-sm`}>
       <figure>
@@ -42,7 +47,7 @@ export const Card = ({
           <button class="btn btn-primary" onClick={() => navigate("/")}>
             Recipes
           </button>
-          <button class="btn btn-primary" onClick={() => navigate(`/print/recipe/${recipeId}`)}>
+          <button class="btn btn-primary" onClick={handlePrint}>
             Print
           </button>
           <Show when={!isFullScreen}>
