@@ -14,7 +14,8 @@ export const App = () => (
   <LayoutProvider>
     <Router base={baseUrl}>
       <Route path="/" component={DefaultLayout}>
-        <Route path="/" component={RecipesPage} />
+        <Route path="/" component={RedirectPage} />
+        <Route path="/recipes/" component={RecipesPage} />
         <Route path="/recipe/:recipeId" component={RecipePage} />
         <Route path="*404" component={NotFound} />
       </Route>
@@ -23,9 +24,6 @@ export const App = () => (
       </Route>
       <Route path="/print" component={PrintLayout}>
         <Route path="/recipe/:recipeId" component={PrintPage} />
-      </Route>
-      <Route path="/redirect" component={PrintLayout}>
-        <Route path="/" component={RedirectPage} />
       </Route>
     </Router>
   </LayoutProvider>
