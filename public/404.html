@@ -7,9 +7,13 @@
     <link rel="shortcut icon" type="image/ico" href="/src/assets/favicon.png" />
     <title>Recipe Cards</title>
     <script>
+      function to() {
+        const from = window.location.href
+        return from.substring(window.location.href.indexOf("recipe-cards"))
+      }
+
       function redirectToApp() {
-        var info = document.querySelector("#info")
-        var path = `/recipe-cards/redirect?to=${location.pathname}`
+        const path = `/recipe-cards/redirect?to=${to()}`
         info.innerHTML = window.location.replace(path)
       }
     </script>
@@ -17,7 +21,12 @@
 
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
-    <p>This page is going to be redirected to: <code id="info"></code></p>
+    <p>Github pages do not support single pages application natively.</p>
+    <p>This page is going to be redirected back to the main application: <code id="info"></code></p>
     <button onclick="redirectToApp()">Redirect to app</button>
   </body>
+  <script>
+    const info = document.querySelector("#info")
+    info.innerHTML = to()
+  </script>
 </html>

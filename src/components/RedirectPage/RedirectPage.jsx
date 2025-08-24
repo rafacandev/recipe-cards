@@ -1,4 +1,4 @@
-import { useNavigate, useParams, useSearchParams } from "@solidjs/router"
+import { useNavigate, useSearchParams } from "@solidjs/router"
 
 export const RedirectPage = () => {
   const [searchParams] = useSearchParams()
