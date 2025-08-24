@@ -2,7 +2,7 @@ import { useNavigate, useSearchParams } from "@solidjs/router"
 
 export const RedirectPage = () => {
   const [searchParams] = useSearchParams()
-  const to = searchParams.redirectTo ?? "/recipes/"
+  const to = searchParams.to ?? "/recipes/"
   const navigate = useNavigate()
   console.log(`navigating to: ${to}`, { searchParams })
 

@@ -7,13 +7,18 @@
     <link rel="shortcut icon" type="image/ico" href="/src/assets/favicon.png" />
     <title>Recipe Cards</title>
     <script>
+      function baseUrl() {
+        return "/recipe-cards/"
+      }
+
       function to() {
         const from = window.location.href
-        return from.substring(window.location.href.indexOf("recipe-cards"))
+        const urlIndex = from.indexOf(baseUrl()) + baseUrl().length
+        return from.substring(urlIndex)
       }
 
       function redirectToApp() {
-        const path = `/recipe-cards/?redirectTo=${to()}`
+        const path = `/recipe-cards/?to=${to()}`
         info.innerHTML = window.location.replace(path)
       }
     </script>
