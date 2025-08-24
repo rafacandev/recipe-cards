@@ -8,7 +8,7 @@
     <title>Recipe Cards</title>
     <script>
       function baseUrl() {
-        return "/recipe-cards/"
+        return "/recipe-cards"
       }
 
       function to() {
@@ -18,7 +18,7 @@
       }
 
       function redirectToApp() {
-        const path = `/recipe-cards/?to=${to()}`
+        const path = `${baseUrl()}/?to=${to()}`
         info.innerHTML = window.location.replace(path)
       }
     </script>
@@ -28,10 +28,10 @@
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <p>Github pages do not support single pages application natively.</p>
     <p>This page is going to be redirected back to the main application: <code id="info"></code></p>
-    <button onclick="redirectToApp()">Redirect to app</button>
   </body>
   <script>
     const info = document.querySelector("#info")
     info.innerHTML = to()
+    redirectToApp()
   </script>
 </html>
