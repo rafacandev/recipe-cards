@@ -6,14 +6,18 @@
     <meta name="theme-color" content="#000000" />
     <link rel="shortcut icon" type="image/ico" href="/src/assets/favicon.png" />
     <title>Recipe Cards</title>
+    <script>
+      function redirectToApp() {
+        var info = document.querySelector("#info")
+        var path = `/recipe-cards/redirect?to=${location.pathname}`
+        info.innerHTML = window.location.replace(path)
+      }
+    </script>
   </head>
+
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
-    <pre id="info"></pre>
+    <p>This page is going to be redirected to: <code id="info"></code></p>
+    <button onclick="redirectToApp()">Redirect to app</button>
   </body>
-  <script>
-    var info = document.querySelector("#info")
-    var path = location.pathname
-    window.location.replace(`/recipe-cards/redirect?to=${path}`)
-  </script>
 </html>

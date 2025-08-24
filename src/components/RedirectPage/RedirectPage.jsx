@@ -5,11 +5,13 @@ export const RedirectPage = () => {
   const to = searchParams.to
   const navigate = useNavigate()
   console.log(`navigating to: ${to}`)
-  navigate(to)
 
   return (
     <div>
       This will be redirected to: <code>{to}</code>
+      <button class="btn" onclick={() => navigate(to)}>
+        Redirect
+      </button>
     </div>
   )
 }
