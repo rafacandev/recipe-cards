@@ -1,7 +1,6 @@
 import { Router, Route } from "@solidjs/router"
 import { RecipesPage } from "../RecipesPage/RecipesPage"
 import { DefaultLayout } from "../Layout/DefaultLayout"
-import { FullScreenLayout } from "../Layout/FullScreenLayout"
 import { NotFound } from "../NotFound/NotFound"
 import { RecipePage } from "../RecipePage/RecipePage"
 import { baseUrl } from "../../context/public"
@@ -17,9 +16,6 @@ export const App = () => (
         <Route path="/recipes/" component={RecipesPage} />
         <Route path="/recipes/:recipeId" component={RecipePage} />
         <Route path="*404" component={NotFound} />
-      </Route>
-      <Route path="/full" component={FullScreenLayout}>
-        <Route path="/recipes/:recipeId" component={() => <RecipePage isFullScreen={true} />} />
       </Route>
       <Route path="/print" component={PrintLayout}>
         <Route path="/recipes/:recipeId" component={PrintPage} />

@@ -2,12 +2,10 @@ import { createContext, createSignal, useContext } from "solid-js"
 
 /**
  * @typedef {Object} LayoutContextValue
- * @property {() => "default" | "fullScreen" | "print"} layout - Get the layout value.
+ * @property {() => "default" | "print"} layout - Get the layout value.
  * @property {() => void} setDefaultLayout - Sets the layout to default.
- * @property {() => void} setFullScreenLayout - Sets the layout to full screen.
  * @property {() => void} setPrintLayout - Sets the layout to print.
  */
-
 export const LayoutContext = createContext()
 
 /**
@@ -23,7 +21,6 @@ export const LayoutProvider = props => {
   const store = {
     layout,
     setDefaultLayout: () => setLayout("default"),
-    setFullScreenLayout: () => setLayout("fullScreen"),
     setPrintLayout: () => setLayout("print"),
   }
 

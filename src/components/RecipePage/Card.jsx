@@ -19,14 +19,7 @@ const Body = ({ ingredients = [""], directions = [""] }) => (
   </>
 )
 
-export const Card = ({
-  recipeId = "",
-  name = "",
-  image = "",
-  ingredients = [],
-  directions = [],
-  isFullScreen = false,
-}) => {
+export const Card = ({ recipeId = "", name = "", image = "", ingredients = [], directions = [] }) => {
   const navigate = useNavigate()
   const { layout } = useLayout()
   const layoutCardClasses = createMemo(() => (layout() === "print" ? "border-2 border-gray-300" : "card"))
@@ -50,16 +43,6 @@ export const Card = ({
           <button class="btn btn-primary" onClick={handlePrint}>
             Print
           </button>
-          <Show when={!isFullScreen}>
-            <button class="btn btn-primary" onClick={() => navigate(`/full/recipes/${recipeId}`)}>
-              Full Screen
-            </button>
-          </Show>
-          <Show when={isFullScreen}>
-            <button class="btn btn-primary" onClick={() => navigate(`/recipes/${recipeId}`)}>
-              Exit Full Screen
-            </button>
-          </Show>
         </div>
       </div>
     </div>
