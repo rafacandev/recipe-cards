@@ -32,7 +32,7 @@ export const Card = ({
   const layoutCardClasses = createMemo(() => (layout() === "print" ? "border-2 border-gray-300" : "card"))
 
   const handlePrint = () => {
-    window.open(`${baseUrl}/print/recipe/${recipeId}`, "print-recipe")
+    window.open(`${baseUrl}/print/recipes/${recipeId}`, "print-recipe")
   }
 
   return (
@@ -51,12 +51,12 @@ export const Card = ({
             Print
           </button>
           <Show when={!isFullScreen}>
-            <button class="btn btn-primary" onClick={() => navigate(`/full/recipe/${recipeId}`)}>
+            <button class="btn btn-primary" onClick={() => navigate(`/full/recipes/${recipeId}`)}>
               Full Screen
             </button>
           </Show>
           <Show when={isFullScreen}>
-            <button class="btn btn-primary" onClick={() => navigate(`/recipe/${recipeId}`)}>
+            <button class="btn btn-primary" onClick={() => navigate(`/recipes/${recipeId}`)}>
               Exit Full Screen
             </button>
           </Show>

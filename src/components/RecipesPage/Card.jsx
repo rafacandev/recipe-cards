@@ -5,7 +5,7 @@ export const Card = ({ recipeId = "", name = "", image = "" }) => {
   const navigate = useNavigate()
 
   const handleOnClick = () => {
-    navigate(`/recipe/${recipeId}`)
+    navigate(`/recipes/${recipeId}`)
   }
 
   return (
