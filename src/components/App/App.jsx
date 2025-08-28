@@ -7,12 +7,13 @@ import { baseUrl } from "../../context/public"
 import { PrintLayout } from "../Layout/PrintLayout"
 import { PrintPage } from "../PrintPage/PrintPage"
 import { LayoutProvider } from "../../context/LayoutContext"
+import { RedirectPage } from "../RedirectPage/RedirectPage"
 
 export const App = () => (
   <LayoutProvider>
     <Router base={baseUrl}>
       <Route path="/" component={DefaultLayout}>
-        <Route path="/" component={RecipesPage} />
+        <Route path="/" component={RedirectPage} />
         <Route path="/recipes/" component={RecipesPage} />
         <Route path="/recipes/:recipeId" component={RecipePage} />
         <Route path="*404" component={NotFound} />
