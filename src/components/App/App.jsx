@@ -14,9 +14,11 @@ export const App = () => (
     <Router base={baseUrl}>
       <Route path="/" component={DefaultLayout}>
         <Route path="/" component={RedirectPage} />
-        <Route path="/recipes/" component={RecipesPage} />
-        <Route path="/recipes/:recipeId" component={RecipePage} />
         <Route path="*404" component={NotFound} />
+      </Route>
+      <Route path="/recipes" component={DefaultLayout}>
+        <Route path="/" component={RecipesPage} />
+        <Route path="/:recipeId" component={RecipePage} />
       </Route>
       <Route path="/print" component={PrintLayout}>
         <Route path="/recipes/:recipeId" component={PrintPage} />
