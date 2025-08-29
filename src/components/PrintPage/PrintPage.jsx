@@ -11,9 +11,5 @@ export const PrintPage = () => {
     window.print()
   })
 
-  return (
-    <div class="h-[25cm] w-[18cm]">
-      <Card {...recipe} />
-    </div>
-  )
+  return <Card {...recipe} />
 }

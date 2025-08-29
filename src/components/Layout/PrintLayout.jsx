@@ -7,7 +7,7 @@ export const PrintLayout = props => {
 
   return (
     <div class="flex justify-center">
-      <div class="flex grow h-[200mm] w-[250mm] justify-center">{props.children}</div>
+      <div class="h-[10cm] w-[15cm]">{props.children}</div>
     </div>
   )
 }
