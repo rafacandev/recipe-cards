@@ -19,44 +19,40 @@ const Body = ({ ingredients = [""], directions = [""] }) => (
 )
 
 export const Card = ({ recipeId = "", name = "", image = "", ingredients = [], directions = [] }) => {
-  let iframe
+  let saveIframe
   const navigate = useNavigate()
   const { layout } = useLayout()
-  const [iframeDisabled, setIframeDisabled] = createSignal(false)
+  const [isSaving, setSaving] = createSignal(false)
   const layoutCardClasses = createMemo(() => (layout() === "print" ? "border-2 border-gray-300" : "card"))
 
-  const handlePrint = () => {
-    window.open(`${baseUrl}/print/recipes/${recipeId}`, "print-recipe")
-  }
-
-  const cleanupIframe = () => {
-    if (iframe) {
-      document.body.removeChild(iframe)
-      iframe = null
+  const cleanupSaveIframe = () => {
+    if (saveIframe) {
+      document.body.removeChild(saveIframe)
+      saveIframe = null
     }
-    window.removeEventListener('message', handleIframeMessage)
+    window.removeEventListener('message', handleSaveCompletedMessage)
   }
 
-  const handleIframeMessage = (event) => {
+  const handleSaveCompletedMessage = (event) => {
     if (event.data === 'saveCompleted') {
-      cleanupIframe()
-      setIframeDisabled(false)
+      cleanupSaveIframe()
+      setSaving(false)
     }
   }
 
   const handleIframe = () => {
-    if (iframe) return
-    setIframeDisabled(true)
-    iframe = document.createElement('iframe')
-    iframe.style.display = "none" 
-    iframe.style.width = "25cm"
-    iframe.src = `${baseUrl}/save/pdf/recipes/${recipeId}`
-    window.addEventListener('message', handleIframeMessage)
-    document.body.appendChild(iframe)
+    if (saveIframe) return
+    setSaving(true)
+    saveIframe = document.createElement('iframe')
+    saveIframe.style.display = "none"
+    saveIframe.style.width = "25cm"
+    saveIframe.src = `${baseUrl}/save/pdf/recipes/${recipeId}`
+    window.addEventListener('message', handleSaveCompletedMessage)
+    document.body.appendChild(saveIframe)
   }
 
   onCleanup(() => {
-    cleanupIframe()
+    cleanupSaveIframe()
   })
 
   return (
@@ -71,11 +67,8 @@ export const Card = ({ recipeId = "", name = "", image = "", ingredients = [], d
           <button class="btn btn-primary" onClick={() => navigate("/")}>
             Recipes
           </button>
-          <button class="btn btn-primary" onClick={handlePrint}>
-            Print
-          </button>
-          <button class="btn btn-primary" onClick={handleIframe} disabled={iframeDisabled()}>
-            iframe
+          <button class="btn btn-primary" onClick={handleIframe} disabled={isSaving()}>
+            Save as PDF
           </button>
         </div>
       </div>
