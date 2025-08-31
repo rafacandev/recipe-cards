@@ -8,8 +8,14 @@ export const PrintPage = () => {
   const recipe = recipes.find(r => r.recipeId === recipeId) ?? null
 
   onMount(() => {
-    window.print()
+    // window.print()
   })
 
-  return <Card {...recipe} />
+  return (
+    <div class="flex justify-center">
+      <div class="w-[18cm]">
+        <Card {...recipe} layout={'print'} />
+      </div>
+    </div>
+  )
 }
