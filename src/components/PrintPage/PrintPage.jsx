@@ -1,14 +1,24 @@
-import { useParams } from "@solidjs/router"
-import { onMount } from "solid-js"
+import { useNavigate, useParams } from "@solidjs/router"
+import { onCleanup, onMount } from "solid-js"
 import { recipes } from "../RecipesPage/recipes"
 import { Card } from "../RecipePage/Card"
 
 export const PrintPage = () => {
   const { recipeId } = useParams()
   const recipe = recipes.find(r => r.recipeId === recipeId) ?? null
+  const navigate = useNavigate()
 
   onMount(() => {
-    // window.print()
+    const handleAfterPrint = () => {
+      navigate(-1)
+    }
+
+    window.addEventListener('afterprint', handleAfterPrint)
+    window.print()
+
+    onCleanup(() => {
+      window.removeEventListener('afterprint', handleAfterPrint)
+    })
   })
 
   return (
