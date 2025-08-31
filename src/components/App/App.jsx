@@ -8,7 +8,6 @@ import { PrintLayout } from "../Layout/PrintLayout"
 import { PrintPage } from "../PrintPage/PrintPage"
 import { LayoutProvider } from "../../context/LayoutContext"
 import { RedirectPage } from "../RedirectPage/RedirectPage"
-import { OutputPage } from "../OutputPage/OutputPage"
 
 export const App = () => (
   <LayoutProvider>
@@ -23,9 +22,6 @@ export const App = () => (
       </Route>
       <Route path="/print" component={PrintLayout}>
         <Route path="/recipes/:recipeId" component={PrintPage} />
-      </Route>
-      <Route path="/output" component={PrintLayout}>
-        <Route path="/:target/recipes/:recipeId" component={OutputPage} />
       </Route>
     </Router>
   </LayoutProvider>
