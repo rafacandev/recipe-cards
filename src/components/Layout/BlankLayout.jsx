@@ -1,5 +1,1 @@
-export const BlankLayout = props => (
-  <>
-    {props.children}
-  </>
-)
+export const BlankLayout = props => <>{props.children}</>

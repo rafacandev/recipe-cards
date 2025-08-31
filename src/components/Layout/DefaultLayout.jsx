@@ -1,8 +1,7 @@
 import { Header } from "./Header"
 import { Footer } from "./Footer"
 
-export const DefaultLayout = props =>
-(
+export const DefaultLayout = props => (
   <div class="flex flex-col h-screen w-full">
     <div class="flex h-14 px-1 justify-center bg-primary">
       <div class="flex h-14 justify-center items-center w-full max-w-4xl text-white font-bold">

@@ -13,18 +13,18 @@ export const PrintPage = () => {
       navigate(-1)
     }
 
-    window.addEventListener('afterprint', handleAfterPrint)
+    window.addEventListener("afterprint", handleAfterPrint)
     window.print()
 
     onCleanup(() => {
-      window.removeEventListener('afterprint', handleAfterPrint)
+      window.removeEventListener("afterprint", handleAfterPrint)
     })
   })
 
   return (
     <div class="flex justify-center">
       <div class="w-[18cm]">
-        <Card {...recipe} layout={'print'} />
+        <Card {...recipe} layout={"print"} />
       </div>
     </div>
   )
