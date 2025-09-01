@@ -42,3 +42,9 @@
   --depth: 1;
   --noise: 0;
 }
+
+@page {
+  margin: 0cm;
+  page-orientation: upright;
+  size: letter portrait;
+}

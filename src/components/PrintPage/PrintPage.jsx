@@ -10,7 +10,7 @@ export const PrintPage = () => {
 
   onMount(() => {
     const handleAfterPrint = () => {
-      navigate(-1)
+      navigate(`/recipes/${recipeId}`)
     }
 
     window.addEventListener("afterprint", handleAfterPrint)
@@ -22,10 +22,8 @@ export const PrintPage = () => {
   })
 
   return (
-    <div class="flex justify-center">
-      <div class="w-[18cm]">
-        <Card {...recipe} layout={"print"} />
-      </div>
+    <div class="flex justify-center p-[1cm]">
+      <Card {...recipe} layout={"print"} />
     </div>
   )
 }
