@@ -1,0 +1,40 @@
+export const Logo = () => (
+  <svg
+    width="24"
+    height="24"
+    viewBox="0 0 36.890831 42.09053"
+    id="svg5"
+    xml:space="preserve"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:svg="http://www.w3.org/2000/svg"
+  >
+    <defs id="defs2" />
+    <g id="layer1" transform="translate(-93.366953,-95.628553)">
+      <path
+        style="fill:none;stroke:#FFFFFF;stroke-width:2.017;stroke-dasharray:none;paint-order:markers fill stroke"
+        d="m 123.74456,121.71344 c 9.09603,-2.8156 5.76746,-14.07466 -1.52812,-14.42656 -1.05245,-10.795868 -9.16088,-10.481294 -12.63522,-10.651028 2.46429,1.20935 2.81938,5.169488 0.4453,5.523298 h -4.94967 c -3.60451,0.1568 -3.94841,3.0573 -3.74582,4.94856 -7.444272,0.84723 -9.996073,11.29721 -2.268027,14.07398 8.241037,-0.34048 16.454647,0.13273 24.681557,0.53175 z"
+        id="path311"
+      />
+      <path
+        style="fill:none;stroke:#FFFFFF;stroke-width:2.017;stroke-dasharray:none;paint-order:markers fill stroke"
+        d="m 99.011531,121.20404 2.677379,13.03795 c 0.36863,1.61486 0.94359,2.11943 2.06792,2.46859 h 15.0408 c 1.44609,-0.11701 2.33708,-0.47423 2.57353,-1.85051 l 2.37967,-13.09676 z"
+        id="path543"
+      />
+      <path
+        style="fill:none;stroke:#FFFFFF;stroke-width:1.117;stroke-dasharray:none;paint-order:markers fill stroke"
+        d="m 104.8464,121.50714 2.11163,15.06509"
+        id="path2007"
+      />
+      <path
+        style="fill:none;stroke:#FFFFFF;stroke-width:1.117;stroke-dasharray:none;paint-order:markers fill stroke"
+        d="m 111.76398,121.7267 0.008,14.72181"
+        id="path2015"
+      />
+      <path
+        style="fill:none;stroke:#FFFFFF;stroke-width:1.117;stroke-dasharray:none;paint-order:markers fill stroke"
+        d="m 118.63028,122.26169 -1.9645,14.1705"
+        id="path2019"
+      />
+    </g>
+  </svg>
+)
