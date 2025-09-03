@@ -3,6 +3,7 @@
 @plugin "@tailwindcss/typography";
 
 @plugin "daisyui" {
+  exclude: rootscrollgutter;
   themes:
     easygoing --default,
     easygoing --prefersdark;
@@ -47,4 +48,8 @@
   margin: 0cm;
   page-orientation: upright;
   size: letter portrait;
+}
+
+html {
+  overflow-y: scroll;
 }

@@ -1,5 +1,6 @@
 import { useNavigate } from "@solidjs/router"
-import { createMemo, Show } from "solid-js"
+import { createMemo, onMount, Show } from "solid-js"
+import QRCode from "qrcode"
 import { publicResource } from "../../context/public"
 import { CardBody } from "./CardBody"
 
@@ -13,7 +14,10 @@ export const Card = ({
   directions = [],
   layout = "default",
 }) => {
+  /** @type {HTMLDialogElement} */
   let dialogRef
+  /** @type {HTMLCanvasElement} */
+  let qrRef
   const navigate = useNavigate()
   const layoutCardClasses = createMemo(() => (layout === "print" ? "border-2 border-gray-300" : "card"))
 
@@ -22,6 +26,12 @@ export const Card = ({
   const handleShare = () => {
     dialogRef.showModal()
   }
+
+  onMount(() => {
+    QRCode.toCanvas(qrRef, window.location.href, error => {
+      if (error) console.error(error)
+    })
+  })
 
   return (
     <>
@@ -47,13 +57,15 @@ export const Card = ({
           </Show>
         </div>
       </div>
-      <dialog ref={dialogRef} className="modal">
-        <div className="modal-box">
-          <h3 className="font-bold text-lg">Hello!</h3>
-          <p className="py-4">Press ESC key or click the button below to close</p>
-          <div className="modal-action">
+      <dialog ref={dialogRef} class="modal">
+        <div class="modal-box">
+          <h3 class="font-bold text-lg mb-5">Share this recipe!</h3>
+          <div class="flex justify-center">
+            <canvas class="border border-slate-200" ref={qrRef} />
+          </div>
+          <div class="modal-action">
             <form method="dialog">
-              <button className="btn">Close</button>
+              <button class="btn btn-primary">Close</button>
             </form>
           </div>
         </div>
