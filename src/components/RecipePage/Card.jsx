@@ -1,7 +1,7 @@
 import { useNavigate } from "@solidjs/router"
 import { createMemo, onMount, Show } from "solid-js"
 import QRCode from "qrcode"
-import { publicResource } from "../../context/public"
+import { baseUrl, publicResource } from "../../context/public"
 import { CardBody } from "./CardBody"
 
 const imageSrc = (image = "") => publicResource(`recipes/${image}`)
@@ -22,7 +22,7 @@ export const Card = ({
   const layoutCardClasses = createMemo(() => (layout === "print" ? "border-2 border-gray-300" : "card"))
 
   const handleRecipes = () => navigate("/recipes")
-  const handlePrint = () => navigate(`/print/recipes/${recipeId}`)
+  const handlePrint = () => window.open(`${baseUrl}/print/recipes/${recipeId}`)
   const handleShare = () => {
     dialogRef.showModal()
   }

@@ -1,6 +1,5 @@
 /**
- * The base url of the application.
- * This is useful for creating absolute paths to resources.
+ * @type {string} - The base url of the application, useful when creating absolute paths to resources.
  */
 export const baseUrl = import.meta.env.BASE_URL
 
