@@ -1,4 +1,4 @@
-import { useNavigate } from "@solidjs/router"
+import { useNavigate, useLocation } from "@solidjs/router"
 import { createMemo, onMount, Show } from "solid-js"
 import QRCode from "qrcode"
 import { baseUrl, publicResource } from "../../context/public"
@@ -19,16 +19,19 @@ export const Card = ({
   /** @type {HTMLCanvasElement} */
   let qrRef
   const navigate = useNavigate()
+  const location = useLocation()
   const layoutCardClasses = createMemo(() => (layout === "print" ? "border-2 border-gray-300" : "card"))
 
   const handleRecipes = () => navigate("/recipes")
   const handlePrint = () => window.open(`${baseUrl}/print/recipes/${recipeId}`)
-  const handleShare = () => {
-    dialogRef.showModal()
-  }
+  const handleShowDialog = () => dialogRef.showModal()
+  const handleCloseDialog = () => dialogRef.requestClose()
 
   onMount(() => {
-    QRCode.toCanvas(qrRef, window.location.href, error => {
+    const protocol = window.location.protocol
+    const host = window.location.host
+    const href = `${protocol}//${host}${location.pathname}`
+    QRCode.toCanvas(qrRef, href, error => {
       if (error) console.error(error)
     })
   })
@@ -44,13 +47,13 @@ export const Card = ({
           <CardBody ingredients={ingredients} directions={directions} />
           <Show when={layout === "default"}>
             <div class="justify-end card-actions">
-              <button class="btn btn-primary" onClick={handleRecipes}>
+              <button class="btn btn-primary" onclick={handleRecipes}>
                 Recipes
               </button>
-              <button class="btn btn-primary" onClick={handleShare}>
+              <button class="btn btn-primary" onclick={handleShowDialog}>
                 Share
               </button>
-              <button class="btn btn-primary" onClick={handlePrint}>
+              <button class="btn btn-primary" onclick={handlePrint}>
                 Print
               </button>
             </div>
@@ -60,15 +63,19 @@ export const Card = ({
       <dialog ref={dialogRef} class="modal">
         <div class="modal-box">
           <h3 class="font-bold text-lg mb-5">Share this recipe!</h3>
+          <p class="text-center">{name}</p>
           <div class="flex justify-center">
             <canvas class="border border-slate-200" ref={qrRef} />
           </div>
-          <div class="modal-action">
-            <form method="dialog">
-              <button class="btn btn-primary">Close</button>
-            </form>
+          <div class="flex justify-end">
+            <button class="btn btn-primary" onclick={handleCloseDialog}>
+              Close
+            </button>
           </div>
         </div>
+        <form method="dialog" class="modal-backdrop">
+          <button>close</button>
+        </form>
       </dialog>
     </>
   )
