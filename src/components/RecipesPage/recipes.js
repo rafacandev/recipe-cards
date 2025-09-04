@@ -65,7 +65,8 @@ export const recipes = [
       "Set the microwave to half power and 24 minutes.",
       "You might want to experiment with different power settings and times for the consistency you like.",
     ],
-  }, {
+  },
+  {
     recipeId: "butter-chicken",
     image: "butter-chicken.png",
     name: "Butter Chicken",
@@ -83,12 +84,12 @@ export const recipes = [
       "1 teaspoon cumin",
       "1 tsp salt",
       "1/4 tsp black pepper",
-      "1 cup heavy cream, sub for half & half or yogurt for low fat"
+      "1 cup heavy cream, sub for half & half or yogurt for low fat",
     ],
     directions: [
       "Heat a large skillet or medium saucepan over medium-high heat. Add the oil, butter, and onions and cook onions down until lightly golden, about 3-4 minutes. Add ginger and garlic and let cook for 30 seconds, stirring so it doesn’t burn.",
       "Add the chicken, tomato paste, and spices. Cook for 5-6 minutes or until everything is cooked through.",
-      "Add the heavy cream and simmer for 8-10 minutes stirring occasionally. Serve over Basmati rice or with naan."
-    ]
-  }
+      "Add the heavy cream and simmer for 8-10 minutes stirring occasionally. Serve over Basmati rice or with naan.",
+    ],
+  },
 ]
