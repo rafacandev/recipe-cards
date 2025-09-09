@@ -1,40 +1,5 @@
 export const Logo = () => (
-  <svg
-    width="24"
-    height="24"
-    viewBox="0 0 36.890831 42.09053"
-    id="svg5"
-    xml:space="preserve"
-    xmlns="http://www.w3.org/2000/svg"
-    xmlns:svg="http://www.w3.org/2000/svg"
-  >
-    <defs id="defs2" />
-    <g id="layer1" transform="translate(-93.366953,-95.628553)">
-      <path
-        style="fill:none;stroke:#FFFFFF;stroke-width:2.017;stroke-dasharray:none;paint-order:markers fill stroke"
-        d="m 123.74456,121.71344 c 9.09603,-2.8156 5.76746,-14.07466 -1.52812,-14.42656 -1.05245,-10.795868 -9.16088,-10.481294 -12.63522,-10.651028 2.46429,1.20935 2.81938,5.169488 0.4453,5.523298 h -4.94967 c -3.60451,0.1568 -3.94841,3.0573 -3.74582,4.94856 -7.444272,0.84723 -9.996073,11.29721 -2.268027,14.07398 8.241037,-0.34048 16.454647,0.13273 24.681557,0.53175 z"
-        id="path311"
-      />
-      <path
-        style="fill:none;stroke:#FFFFFF;stroke-width:2.017;stroke-dasharray:none;paint-order:markers fill stroke"
-        d="m 99.011531,121.20404 2.677379,13.03795 c 0.36863,1.61486 0.94359,2.11943 2.06792,2.46859 h 15.0408 c 1.44609,-0.11701 2.33708,-0.47423 2.57353,-1.85051 l 2.37967,-13.09676 z"
-        id="path543"
-      />
-      <path
-        style="fill:none;stroke:#FFFFFF;stroke-width:1.117;stroke-dasharray:none;paint-order:markers fill stroke"
-        d="m 104.8464,121.50714 2.11163,15.06509"
-        id="path2007"
-      />
-      <path
-        style="fill:none;stroke:#FFFFFF;stroke-width:1.117;stroke-dasharray:none;paint-order:markers fill stroke"
-        d="m 111.76398,121.7267 0.008,14.72181"
-        id="path2015"
-      />
-      <path
-        style="fill:none;stroke:#FFFFFF;stroke-width:1.117;stroke-dasharray:none;paint-order:markers fill stroke"
-        d="m 118.63028,122.26169 -1.9645,14.1705"
-        id="path2019"
-      />
-    </g>
+  <svg xmlns="http://www.w3.org/2000/svg" height="1em" fill="currentColor" viewBox="0 0 512 512">
+    <path d="M 272 0 Q 262 0 257 10 Q 254 20 261 27 L 267 33 L 267 33 Q 272 39 272 46 Q 270 62 254 64 L 192 64 L 192 64 Q 165 65 147 83 Q 129 101 128 128 L 128 129 L 128 129 Q 123 130 118 131 L 83 143 L 83 143 Q 60 151 46 170 Q 32 189 32 214 Q 33 245 54 266 Q 75 287 106 288 L 406 288 L 406 288 Q 437 287 458 266 Q 479 245 480 214 Q 480 189 466 170 Q 452 151 429 143 L 394 131 L 394 131 Q 388 129 381 128 Q 384 118 384 107 Q 383 62 353 31 Q 322 1 277 0 L 272 0 L 272 0 Z M 300 512 L 324 320 L 300 512 L 324 320 L 188 320 L 188 320 L 212 512 L 212 512 L 300 512 L 300 512 Z M 96 320 L 121 472 L 96 320 L 121 472 Q 125 490 138 501 Q 151 512 169 512 L 180 512 L 180 512 L 156 320 L 156 320 L 96 320 L 96 320 Z M 332 512 L 343 512 L 332 512 L 343 512 Q 361 512 374 501 Q 387 490 391 472 L 416 320 L 416 320 L 356 320 L 356 320 L 332 512 L 332 512 Z" />
   </svg>
 )
