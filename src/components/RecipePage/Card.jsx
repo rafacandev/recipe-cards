@@ -3,6 +3,9 @@ import { createMemo, onMount, Show } from "solid-js"
 import QRCode from "qrcode"
 import { baseUrl, publicResource } from "../../context/public"
 import { CardBody } from "./CardBody"
+import { QrCode } from "../../icons/QrCode"
+import { Book } from "../../icons/Book"
+import { Print } from "../../icons/Print"
 
 const imageSrc = (image = "") => publicResource(`recipes/${image}`)
 
@@ -48,12 +51,15 @@ export const Card = ({
           <Show when={layout === "default"}>
             <div class="justify-end card-actions">
               <button class="btn btn-primary" onclick={handleRecipes}>
+                <Book/>
                 Recipes
               </button>
               <button class="btn btn-primary" onclick={handleShowDialog}>
+                <QrCode/>
                 Share
               </button>
               <button class="btn btn-primary" onclick={handlePrint}>
+                <Print/>
                 Print
               </button>
             </div>
