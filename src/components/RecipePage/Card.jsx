@@ -49,16 +49,16 @@ export const Card = ({
           <h2 class="card-title">{name}</h2>
           <CardBody ingredients={ingredients} directions={directions} />
           <Show when={layout === "default"}>
-            <div class="justify-end card-actions">
-              <button class="btn btn-primary" onclick={handleRecipes}>
+            <div class="card-actions flex-col items-center mt-8 md:flex-row justify-end">
+              <button class="btn btn-primary w-64 md:w-40" onclick={handleRecipes}>
                 <Book />
                 Recipes
               </button>
-              <button class="btn btn-primary" onclick={handleShowDialog}>
+              <button class="btn btn-primary w-64 md:w-40" onclick={handleShowDialog}>
                 <QrCode />
                 Share
               </button>
-              <button class="btn btn-primary" onclick={handlePrint}>
+              <button class="btn btn-primary w-64 md:w-40" onclick={handlePrint}>
                 <Print />
                 Print
               </button>
