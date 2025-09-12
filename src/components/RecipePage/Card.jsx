@@ -51,15 +51,15 @@ export const Card = ({
           <Show when={layout === "default"}>
             <div class="justify-end card-actions">
               <button class="btn btn-primary" onclick={handleRecipes}>
-                <Book/>
+                <Book />
                 Recipes
               </button>
               <button class="btn btn-primary" onclick={handleShowDialog}>
-                <QrCode/>
+                <QrCode />
                 Share
               </button>
               <button class="btn btn-primary" onclick={handlePrint}>
-                <Print/>
+                <Print />
                 Print
               </button>
             </div>
