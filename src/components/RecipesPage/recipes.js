@@ -1,7 +1,7 @@
 /**
  * @typedef {{
  *  recipeId: string,
- *  image: string,
+ *  images: string[],
  *  name: string,
  *  ingredients: string[],
  *  directions: string[]
@@ -14,7 +14,7 @@
 export const recipes = [
   {
     recipeId: "chilli",
-    image: "chilli.jpg",
+    images: ["chilli.jpg"],
     name: "Chilli",
     ingredients: [
       "1 pound ground beef",
@@ -34,7 +34,7 @@ export const recipes = [
   },
   {
     recipeId: "honey-garlic-chicken",
-    image: "honey-garlic-chicken.jpg",
+    images: ["honey-garlic-chicken.jpg"],
     name: "Honey Garlic Chicken",
     ingredients: [
       "3 pounds boneless skinless chicken thighs",
@@ -57,7 +57,7 @@ export const recipes = [
   },
   {
     recipeId: "microwave-rice",
-    image: "microwave-rice.jpg",
+    images: ["microwave-rice.jpg"],
     name: "Microwave Rice",
     ingredients: ["1 cup of white rice", "2 cups of water"],
     directions: [
@@ -68,7 +68,7 @@ export const recipes = [
   },
   {
     recipeId: "butter-chicken",
-    image: "butter-chicken.png",
+    images: ["butter-chicken-1.png", "butter-chicken-2.webp"],
     name: "Butter Chicken",
 
     ingredients: [

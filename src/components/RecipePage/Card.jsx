@@ -13,7 +13,7 @@ const imageSrc = (image = "") => publicResource(`recipes/${image}`)
 export const Card = ({
   recipeId = "",
   name = "",
-  image = "",
+  images = [""],
   ingredients = [],
   directions = [],
   layout = "default",
@@ -43,7 +43,7 @@ export const Card = ({
   return (
     <>
       <div class={`${layoutCardClasses()} card-md card-border bg-white shadow-sm`}>
-        <Carousel images={[imageSrc(image)]} />
+        <Carousel images={images.map(i => imageSrc(i))} />
         <div class="card-body">
           <h2 class="card-title">{name}</h2>
           <CardBody ingredients={ingredients} directions={directions} />
