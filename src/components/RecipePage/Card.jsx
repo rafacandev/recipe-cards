@@ -6,6 +6,7 @@ import { CardBody } from "./CardBody"
 import { QrCode } from "../../icons/QrCode"
 import { Book } from "../../icons/Book"
 import { Print } from "../../icons/Print"
+import { Carousel } from "../Carousel/Carousel"
 
 const imageSrc = (image = "") => publicResource(`recipes/${image}`)
 
@@ -42,6 +43,7 @@ export const Card = ({
   return (
     <>
       <div class={`${layoutCardClasses()} card-md card-border bg-white shadow-sm`}>
+        <Carousel />
         <figure>
           <img class="h-48 w-full object-cover" src={imageSrc(image)} alt={name} />
         </figure>
