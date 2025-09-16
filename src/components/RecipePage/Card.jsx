@@ -43,10 +43,7 @@ export const Card = ({
   return (
     <>
       <div class={`${layoutCardClasses()} card-md card-border bg-white shadow-sm`}>
-        <Carousel />
-        <figure>
-          <img class="h-48 w-full object-cover" src={imageSrc(image)} alt={name} />
-        </figure>
+        <Carousel images={[imageSrc(image)]} />
         <div class="card-body">
           <h2 class="card-title">{name}</h2>
           <CardBody ingredients={ingredients} directions={directions} />
