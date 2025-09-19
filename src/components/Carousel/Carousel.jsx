@@ -37,7 +37,7 @@ const CarouselItem = props => {
 
 export const Carousel = ({ images = [] }) => {
   const items = images.map(img => ({ img, ref: undefined }))
-  const scrollInto = position => items[position].ref.scrollIntoView({ behavior: "smooth" })
+  const scrollInto = position => items[position].ref.scrollIntoView({ behavior: 'smooth', contaier: 'nearest',   block: 'center' })
   const handleNext = position => scrollInto(position + 1)
   const handlePrevious = position => scrollInto(position - 1)
 
