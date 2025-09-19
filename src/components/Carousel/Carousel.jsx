@@ -1,61 +1,48 @@
-import { For, Show } from "solid-js"
+import { createSignal, Show, For } from "solid-js"
 
 /**
- * @typedef {Object} CarouselItemProps
- * @property {(r: HTMLDivElement) => void} setRef
- * @property {string} imgSrc
- * @property {boolean} hasPrevious
- * @property {(position: number) => void} onPrevious
- * @property {number} position
- * @property {boolean} hasNext
- * @property {(position: number) => void} onNext
+ * @param {{images: string[]}} props
  */
+export const Carousel = props => {
+  const [currentIndex, setCurrentIndex] = createSignal(0)
 
-/**
- * A single item in the carousel.
- * @param {CarouselItemProps} props
- */
-const CarouselItem = props => {
+  const handlePrevious = () => {
+    setCurrentIndex(prevIndex => (prevIndex > 0 ? prevIndex - 1 : 0))
+  }
+
+  const handleNext = () => {
+    setCurrentIndex(prevIndex => (prevIndex < props.images.length - 1 ? prevIndex + 1 : prevIndex))
+  }
+
+  const hasPrevious = () => currentIndex() > 0
+  const hasNext = () => currentIndex() < props.images.length - 1
+
   return (
-    <div ref={r => props.setRef(r)} class="carousel-item relative w-full">
-      <img src={props.imgSrc} class="w-full h-48 object-cover" />
+    <div class="relative w-full overflow-hidden">
+      <div
+        class="flex transition-transform duration-500 ease-in-out"
+        style={{ transform: `translateX(-${currentIndex() * 100}%)` }}
+      >
+        <For each={props.images}>
+          {image => (
+            <div class="w-full flex-shrink-0">
+              <img src={image} class="w-full h-48 object-cover" />
+            </div>
+          )}
+        </For>
+      </div>
       <div class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
-        <Show when={props.hasPrevious} fallback={<div></div>}>
-          <button class="btn btn-circle" onclick={() => props.onPrevious(props.position)}>
+        <Show when={hasPrevious()} fallback={<div />}>
+          <button class="btn btn-circle" onClick={handlePrevious}>
             ❮
           </button>
         </Show>
-        <Show when={props.hasNext} fallback={<div></div>}>
-          <button class="btn btn-circle" onclick={() => props.onNext(props.position)}>
+        <Show when={hasNext()} fallback={<div />}>
+          <button class="btn btn-circle" onClick={handleNext}>
             ❯
           </button>
         </Show>
       </div>
-    </div>
-  )
-}
-
-export const Carousel = ({ images = [] }) => {
-  const items = images.map(img => ({ img, ref: undefined }))
-  const scrollInto = position => items[position].ref.scrollIntoView({ behavior: 'smooth', contaier: 'nearest',   block: 'center' })
-  const handleNext = position => scrollInto(position + 1)
-  const handlePrevious = position => scrollInto(position - 1)
-
-  return (
-    <div class="carousel carousel-center w-full">
-      <For each={items}>
-        {(item, position) => (
-          <CarouselItem
-            position={position()}
-            hasNext={position() < items.length - 1}
-            hasPrevious={position() > 0}
-            setRef={r => (item.ref = r)}
-            imgSrc={item.img}
-            onNext={handleNext}
-            onPrevious={handlePrevious}
-          />
-        )}
-      </For>
     </div>
   )
 }
