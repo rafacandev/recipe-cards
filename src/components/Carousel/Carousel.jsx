@@ -19,28 +19,21 @@ export const Carousel = props => {
 
   return (
     <div class="relative w-full overflow-hidden">
-      <div
-        class="flex transition-transform duration-500 ease-in-out"
-        style={{ transform: `translateX(-${currentIndex() * 100}%)` }}
-      >
-        <For each={props.images}>
-          {image => (
-            <div class="w-full flex-shrink-0">
-              <img src={image} class="w-full h-48 object-cover" />
-            </div>
-          )}
-        </For>
+      <div class={`flex transition-transform duration-500 ease-in-out translate-x-[-${currentIndex() * 100}%]`}>
+        <For each={props.images}>{image => <img src={image} class="w-full flex-shrink-0 h-56 object-cover" />}</For>
       </div>
-      <div class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
+      <div class="absolute left-0 right-0 top-1/2 flex -translate-y-1/2 transform justify-between">
         <Show when={hasPrevious()} fallback={<div />}>
-          <button class="btn btn-circle" onClick={handlePrevious}>
-            ❮
-          </button>
+          <div class="flex items-center justify-start h-56 w-1/3 p-5 cursor-pointer" onClick={handlePrevious}>
+            <button class="btn btn-circle" onClick={handlePrevious}>
+              ❮
+            </button>
+          </div>
         </Show>
         <Show when={hasNext()} fallback={<div />}>
-          <button class="btn btn-circle" onClick={handleNext}>
-            ❯
-          </button>
+          <div class="flex items-center justify-end h-56 w-1/3 p-5 cursor-pointer" onClick={handleNext}>
+            <button class="btn btn-circle">❯</button>
+          </div>
         </Show>
       </div>
     </div>
